@@ -1,0 +1,22 @@
+{
+  "name": "challenge-cypress",
+  "version": "1.0.0",
+  "description": "Desafio de automação com Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "cypress run --config video=false --env allure=true",
+    "allure:report": "allure generate allure-results",
+    "allure:clear": "rm -r allure-results/ allure-report || true",
+    "allure:open": "allure open allure-report",
+    "test": "npx npm-run-all allure:clear cy:run allure:report"
+  },
+  "keywords": [],
+  "author": "Cleveron Sampaio",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^1.10.1",
+    "cypress": "^4.12.1",
+    "faker": "^5.2.0"
+  }
+}
